@@ -63,7 +63,7 @@ function generateIndex() {
   <p class="count">共 ${total} 期日報</p>
   <ul>${linksHtml}</ul>
   <footer>
-    <p>Powered by PubMed + Zhipu AI \u00B7 <a href="https://github.com/u8901006/adolescent-bipolar-disorder">GitHub</a></p>
+    <p>Powered by PubMed + NVIDIA AI \u00B7 <a href="https://github.com/u8901006/adolescent-bipolar-disorder">GitHub</a></p>
   </footer>
 </div>
 </body>

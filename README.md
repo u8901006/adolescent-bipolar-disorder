@@ -5,7 +5,7 @@ AI-curated daily literature monitoring for adolescent bipolar disorder research.
 ## Features
 
 - Automatically fetches latest papers from PubMed using comprehensive search strategies
-- Uses Zhipu AI (GLM-5-Turbo) to analyze, summarize, and categorize research
+- Uses NVIDIA Nemotron 3 Super to analyze, summarize, and categorize research
 - Generates beautiful HTML reports deployed to GitHub Pages
 - Tracks processed papers to avoid duplicate summaries
 - Runs daily at 22:05 GMT+8
@@ -27,7 +27,7 @@ Based on the Adolescent Bipolar Disorder Research Toolkit, covering:
 
 - Node.js 24
 - PubMed E-utilities API
-- Zhipu AI API (GLM-5-Turbo → GLM-4.7 → GLM-4.7-Flash fallback chain)
+- NVIDIA API (Nemotron 3 Super → Nemotron 3 Nano fallback chain)
 - GitHub Actions with SHA-pinned actions
 
 ## Links

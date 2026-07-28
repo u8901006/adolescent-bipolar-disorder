@@ -3,9 +3,9 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const API_BASE = process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODEL_CHAIN = ["glm-5-turbo", "glm-4.7", "glm-4.7-flash"];
-const MAX_TOKENS = 50000;
+const API_BASE = "https://integrate.api.nvidia.com/v1";
+const MODEL_CHAIN = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
+const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 480000;
 const MAX_RETRIES = 3;
 
@@ -111,7 +111,7 @@ function robustJsonParse(text) {
   }
 }
 
-async function callZhipuAPI(apiKey, papersData) {
+async function callNvidiaAPI(apiKey, papersData) {
   const dateStr = papersData.date || new Date(Date.now() + 8 * 3600000).toISOString().slice(0, 10);
   const papersText = JSON.stringify(papersData.papers || [], null, 2);
   const prompt = buildUserPrompt(dateStr, papersData.count || 0, papersText);
@@ -134,9 +134,11 @@ async function callZhipuAPI(apiKey, papersData) {
               { role: "system", content: SYSTEM_PROMPT },
               { role: "user", content: prompt },
             ],
-            temperature: 0.3,
-            top_p: 0.9,
+            temperature: 1.0,
+            top_p: 0.95,
             max_tokens: MAX_TOKENS,
+            stream: false,
+            chat_template_kwargs: { enable_thinking: false },
           }),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         });
@@ -356,7 +358,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">\uD83D\uDCC5 ${dateDisplay}（週${weekday}）</span>
         <span class="badge badge-count">\uD83D\uDCDA ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
       </div>
     </div>
   </header>
@@ -402,7 +404,7 @@ function generateHtml(analysis) {
   </div>
 
   <footer>
-    <span>資料來源：PubMed &middot; 分析模型：Zhipu AI GLM</span>
+    <span>資料來源：PubMed &middot; 分析模型：NVIDIA Nemotron</span>
     <span><a href="https://github.com/u8901006/adolescent-bipolar-disorder">GitHub</a></span>
   </footer>
 </div>
@@ -436,9 +438,9 @@ async function main() {
     if (args[i] === "--output" && args[i + 1]) outputPath = resolve(__dirname, "..", args[++i]);
   }
 
-  const apiKey = process.env.ZHIPU_API_KEY || "";
+  const apiKey = process.env.NVIDIA_API_KEY || "";
   if (!apiKey) {
-    console.error("[ERROR] No API key. Set ZHIPU_API_KEY env var.");
+    console.error("[ERROR] No API key. Set NVIDIA_API_KEY env var.");
     process.exit(1);
   }
 
@@ -466,7 +468,7 @@ async function main() {
     return;
   }
 
-  const analysis = await callZhipuAPI(apiKey, papersData);
+  const analysis = await callNvidiaAPI(apiKey, papersData);
   if (!analysis) {
     console.error("[ERROR] AI analysis failed");
     process.exit(1);
