@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Adolescent Bipolar Daily &middot; 青少年雙相情緒障礙文獻日報 &middot; 2026年10月28日（週二）</title>
+<meta name="description" content="2026年10月28日 青少年雙相情緒障礙文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: #fdf9f2; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-banner { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .link-icon { font-size: 28px; flex-shrink: 0; }
+  .link-info { flex: 1; }
+  .link-name { font-size: 15px; font-weight: 700; color: var(--text); }
+  .link-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .link-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } .links-banner { gap: 8px; } .link-card { padding: 14px 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Adolescent Bipolar Daily &middot; 青少年雙相情緒障礙文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年10月28日（週二）</span>
+        <span class="badge badge-count">📚 7 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📊 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻以青少年雙相情緒障礙為核心，亮點在於兩篇高品質證據綜合研究分別確立了心理社會介入與藥物治療的療效證據，並透過傘狀回顧完整描繪青少年雙相障礙的臨床、認知與神經影像特徵，另包含社會認知分期研究與中國疾病負擔流行病學數據。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🏆</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>青少年雙相譜系障礙的臨床、認知、生物學與治療特徵：傘狀回顧的綜合證據</h3>
+          <p class="journal-source">Journal of the American Academy of Child and Adolescent Psychiatry &middot; Meta-Analytic Evidence of Clinical, Cognitive, Biological and Treatment Characteristics of Bipolar Spectrum Disorder in Children and Adolescents: Results From an Umbrella Review</p>
+          <p>整合52篇荟萃分析（N=59,967），確立青少年雙相障礙核心症狀為精力增強、易怒、情緒反應性，ADHD共病率53%，自殺嘗試率26.2%且高於成人與憂鬱症，第二代抗精神病藥物與情緒穩定劑治療躁症效果顯著，CBT可改善雙向情緒症狀。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">兒童與青少年雙相譜系障礙患者（平均年齡13歲）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">第二代抗精神病藥物、情緒穩定劑、認知行為治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">安慰劑、健康對照組、成人雙相障礙、青少年憂鬱症</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">症狀嚴重度、自殺風險、神經認知功能、神經影像標記、治療效果量</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">兒童與青少年精神醫學</span><span class="tag">系統性回顧</span><span class="tag">藥物治療</span><span class="tag">精神心理治療</span><span class="tag">自殺防治</span><span class="tag">認知功能</span><span class="tag">神經影像</span><span class="tag">診斷與鑑別診斷</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42901238/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>青少年雙相譜系障礙的附加心理社會介入：系統性回顧與荟萃分析</h3>
+          <p class="journal-source">European Child &amp; Adolescent Psychiatry &middot; Adjunctive psychosocial interventions for children and adolescents with bipolar spectrum disorders: a systematic review and meta-analysis</p>
+          <p>納入28項研究（N=16獨立樣本），證實附加心理社會介入（心理教育、CBT、技能訓練、家庭介入）可顯著減少青少年抑鬱（g=0.586）與躁症（g=0.485）症狀，CBT為主的多元介入在對照研究中對抑鬱（g=0.390）與躁症（g=0.718）均具優勢。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">兒童與青少年雙相譜系障礙患者（平均年齡15歲，59%女性）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">附加心理社會介入（心理教育、認知行為策略、技能訓練、家庭介入）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">治療前基線、對照組（常規照護/等待名單）</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">抑鬱症狀變化量、躁症症狀變化量、介入類型與發展階段的調節效應</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">兒童與青少年精神醫學</span><span class="tag">系統性回顧</span><span class="tag">精神心理治療</span><span class="tag">家庭介入</span><span class="tag">認知功能</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42931930/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🔬</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>雙相障礙連續體上的社會認知障礙：高風險、首發與慢性期的比較研究</h3>
+          <p class="journal-source">European Neuropsychopharmacology &middot; Social cognitive impairment across the bipolar disorder continuum: A comparative study of high-risk, first-episode, and chronic groups</p>
+          <p>比較四組受試者（n=355），發現情緒辨識、心智理論、社會知識與社會感知等能力型社會認知領域呈現從高風險到慢性期的階段性漸進惡化，支持雙相障礙臨床分期模型；歸因偏誤則無分期差異。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">健康對照組、家族高風險、超高風險、首發雙相障礙、慢性雙相障礙</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（橫斷面比較）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照組Z分數、各臨床階段組別間比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">五大社會認知次域表現（情緒辨識、歸因偏誤、心智理論、社會知識、社會感知）的分期漸進趨勢</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">兒童與青少年精神醫學</span><span class="tag">認知功能</span><span class="tag">家族風險</span><span class="tag">長期追蹤</span><span class="tag">診斷與鑑別診斷</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42721927/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">📊</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>1990-2023年中國焦慮、憂鬱與雙相障礙疾病負擔趨勢與預測</h3>
+          <p class="journal-source">Journal of Affective Disorders &middot; Burden and trends of anxiety, depressive, and bipolar disorders in China from 1990 to 2023: Joinpoint, age-period-cohort effects, and forecasts</p>
+          <p>基於GBD 2023數據，揭示中國過去34年雙相障礙年齡標準化傷殘調整壽命年損失率（ASDR）維持穩定，但焦慮與憂鬱症上升；雙相障礙負擔集中於中年，女性負擔較重，預測未來15年雙相障礙負擔將維持穩定。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">中國全人口（1990-2023年GBD數據）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（觀察性流行病學研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同年齡、性別、時期、出生隊列；焦慮症/憂鬱症負擔對比</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">DALY計數、年齡標準化DALY率（ASDR）趨勢、年齡-時期-隊列效應、2024-2038年預測</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">亞洲研究</span><span class="tag">流行病學</span><span class="tag">長期追蹤</span><span class="tag">社會決定因素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42913892/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">💔</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>童年虐待對成人緩解期雙相障礙患者情緒智力與心理社會功能的影響</h3>
+          <p class="journal-source">European Psychiatry &middot; Effects of childhood maltreatment on emotional intelligence and psychosocial functioning in adult euthymic bipolar disorder patients compared with healthy controls</p>
+          <p>對比124例緩解期雙相患者與124名健康對照，發現低/中度童年虐待組（而非高度組）情緒智力策略區分數最低，但情緒智力不中介虐待與功能關係，提示虐待嚴重程度與功能後果呈非線性關係。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">成人緩解期雙相障礙患者（n=124）與健康對照（n=124）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（橫斷面評估）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無虐待組、低/中度虐待組、高度虐待組、健康對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">情緒智力（MSCEIT）、心理社會功能（FAST）、童年創傷問卷（CTQ）分層關聯</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">創傷後壓力症</span><span class="tag">認知功能</span><span class="tag">情緒調節</span><span class="tag">長期追蹤</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42910505/" target="_blank">閱讀原文 &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📀</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👶</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>缺血性胎盤疾病與產後神經精神疾病住院風險：全國人口隊列研究</h3>
+          <p class="journal-source">American Journal of Obstetrics and Gynecology</p>
+          <p>分析1736萬例產婦，缺血性胎盤疾病使產後一年內神經精神疾病（含雙相障礙）住院風險增加50%（aHR 1.50），提示產前胎盤缺血可能為後代神經發展風障礙的早期標記。</p>
+          <div class="card-footer">
+            <span class="tag">兒童與青少年精神醫學</span><span class="tag">長期追蹤</span><span class="tag">社會決定因素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42431247/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">❌</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>達文西Xi機器人輔助極低位直腸癌手術的短期療效</h3>
+          <p class="journal-source">Chinese Journal of Gastrointestinal Surgery</p>
+          <p>直腸癌手術技術研究，與青少年雙相障礙無關，屬檢索誤入。</p>
+          <div class="card-footer">
+            
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42927969/" target="_blank">PubMed &rarr;</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">系統性回顧</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">兒童與青少年精神醫學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神心理治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">藥物治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">認知功能</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經影像</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">家庭介入</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">流行病學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">亞洲研究</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">創傷後壓力症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">長期追蹤</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">診斷與鑑別診斷</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">情緒調節</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">家族風險</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">社會決定因素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">青少年雙相障礙</span><span class="keyword">系統性回顧</span><span class="keyword">傘狀回顧</span><span class="keyword">心理社會介入</span><span class="keyword">認知行為治療</span><span class="keyword">社會認知</span><span class="keyword">臨床分期</span><span class="keyword">疾病負擔</span><span class="keyword">童年創傷</span><span class="keyword">自殺風險</span></div></div>
+
+  <div class="links-banner">
+    <a href="https://www.leepsyclinic.com/" class="link-card" target="_blank">
+      <span class="link-icon">🏥</span>
+      <span class="link-info">
+        <span class="link-name">李政洋身心診所</span>
+        <span class="link-desc">專業身心科醫療服務</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="link-card" target="_blank">
+      <span class="link-icon">📜</span>
+      <span class="link-info">
+        <span class="link-name">訂閱電子報</span>
+        <span class="link-desc">獲得最新精神醫學知識</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="link-card" target="_blank">
+      <span class="link-icon">☕</span>
+      <span class="link-info">
+        <span class="link-name">Buy Me a Coffee</span>
+        <span class="link-desc">支持本研究日報持續運作</span>
+      </span>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：NVIDIA Nemotron</span>
+    <span><a href="https://github.com/u8901006/adolescent-bipolar-disorder">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
